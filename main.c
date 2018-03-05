@@ -8,10 +8,12 @@ char getOperand(char operand)
     {
         printf("Would you like to add, subtract, multiply, or divide? (a, s, m, d): ");
         scanf("%c", &operand);
-        if (operand == 'a' || operand == 's' || operand == 'm' || operand == 'd') {
+        if (operand == 'a' || operand == 's' || operand == 'm' || operand == 'd')
+        {
             return operand;
         }
-        else {
+        else
+        {
             printf("Please chose a valid input. \n");
             fflush(stdin);
             continue;
@@ -65,7 +67,17 @@ void multiply ()
 void divide()
 {
     int x = getx();
-    int y = gety();
+    int y;
+    while (1)
+    {
+        y = gety();
+        if (y == 0)
+        {
+            printf("Please enter an integer that is not 0.\n");
+            continue;
+        }
+        break;
+    }
     printf("%d divided by %d is %d \n", x, y, x/y);
     return;
 }
@@ -74,7 +86,6 @@ void doCalculation()
 {
     char op = '\0';
     op = getOperand(op);
-    printf("You chose: %c \n", op);
     switch (op) {
         case 'a':
             add();
@@ -96,29 +107,29 @@ bool repeat()
     while (1)
     {
         printf("Would you like to do another calculation? (y, n): ");
-    char confirm = '\0';
-    scanf("%c", &confirm);
-    fflush(stdin);
-    if (confirm == 'y')
-    {
-        return 1;
-    }
-    else if (confirm == 'n')
-    {
-        return 0;
-    }
-    else
-    {
-        printf("Please enter a valid option. \n");
-        continue;
-    }
+        char confirm = '\0';
+        scanf("%c", &confirm);
+        fflush(stdin);
+        if (confirm == 'y')
+        {
+            return 1;
+        }
+        else if (confirm == 'n')
+        {
+            return 0;
+        }
+        else
+        {
+            printf("Please enter a valid option. \n");
+            continue;
+        }
     }
 }
 
 
 int main()
 {
-    printf("Welcome to calculator v0.1\n");
+    printf("Welcome to calculator v0.2\n");
     while (1)
     {
         doCalculation();
@@ -127,7 +138,6 @@ int main()
             continue;
         else
             break;
-
     }
     printf("Goodbye!");
     return 0;
