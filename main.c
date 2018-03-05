@@ -21,53 +21,53 @@ char getOperand(char operand)
     }
 }
 
-int getx()
+float getx()
 {
-    int x;
-    printf("Please enter the first number (int): ");
-    scanf("%d", &x);
+    float x;
+    printf("Please enter the first number (float): ");
+    scanf("%f", &x);
     fflush(stdin);
     return x;
 }
 
-int gety()
+float gety()
 {
-    int y;
-    printf("Please enter the second number (int): ");
-    scanf("%d", &y);
+    float y;
+    printf("Please enter the second number (float): ");
+    scanf("%f", &y);
     fflush(stdin);
     return y;
 }
 
 void add()
 {
-    int x = getx();
-    int y = gety();
-    printf("%d plus %d is %d \n", x, y, x+y);
+    float x = getx();
+    float y = gety();
+    printf("%f plus %f is %f \n", x, y, x+y);
     return;
 }
 
 void subtract()
 {
-    int x = getx();
-    int y = gety();
-    printf("%d minus %d is %d \n", x, y, x-y);
+    float x = getx();
+    float y = gety();
+    printf("%f minus %f is %f \n", x, y, x-y);
     return;
 }
 
 void multiply ()
 {
 
-    int x = getx();
-    int y = gety();
-    printf("%d multiplied by %d is %d \n", x, y, x*y);
+    float x = getx();
+    float y = gety();
+    printf("%f multiplied by %f is %f \n", x, y, x*y);
     return;
 }
 
 void divide()
 {
-    int x = getx();
-    int y;
+    float x = getx();
+    float y;
     while (1)
     {
         y = gety();
@@ -78,7 +78,7 @@ void divide()
         }
         break;
     }
-    printf("%d divided by %d is %d \n", x, y, x/y);
+    printf("%f divided by %f is %f \n", x, y, x/y);
     return;
 }
 
@@ -125,7 +125,6 @@ bool repeat()
         }
     }
 }
-
 
 int main()
 {
